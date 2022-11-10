@@ -23,7 +23,9 @@ docker exec -ti mongo bash
 mongosh
 ```
 
+# TODO
 
+> relation mongoose for get all, get one, put and delete
 
 ## Credentials
 
