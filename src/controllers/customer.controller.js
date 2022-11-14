@@ -18,11 +18,11 @@ const CustomerController = {
         res.send(deleteCustomer)
     },
     getAll: async (req, res) => {
-        const customersList = await Customer.find()
+        const customersList = await Customer.find().populate('invoices')
         res.send(customersList)
     },
     getOne: async (req, res) => {
-        const customer = await Customer.findById(req.params.id)
+        const customer = await Customer.findById(req.params.id).populate('invoices')
         res.send(customer)
     }
 }
