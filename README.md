@@ -26,8 +26,18 @@ mongosh
 ```
 
 # TODO
+> create model User (email, password)
+> create userController
+> create userRouter
 
-> relation mongoose for get all, get one, put and delete
+### features
+create user
+update user
+delete user
+getOne user
+get all user
+relation user > customer
+One user can have Many customers
 
 ## Credentials
 
