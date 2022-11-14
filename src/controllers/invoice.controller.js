@@ -12,11 +12,13 @@ const InvoiceController = {
         }
 
         data.customer = customer
-        const invoice = new Invoice(data)
+        const invoice = await Invoice.create(data)
+        await invoice.save()
         
-        const newInvoice = await invoice.save()
+        res.send(invoice)
 
-        res.send(newInvoice)
+        customer.invoices.push(invoice)
+        await customer.save()
     },
     update: async (req, res) => {
         const newInvoice = req.body
