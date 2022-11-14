@@ -4,16 +4,18 @@
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-# Starting project
 
+# Starting project with make
+```bash
+make init
+```
+# Starting project
 ```bash
 # start containers
 docker-compose up -d
 # start node server
 npm run start:dev
 ```
-
-
 # Mongo doc
 
 ```bash
