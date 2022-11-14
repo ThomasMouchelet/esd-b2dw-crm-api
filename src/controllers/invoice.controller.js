@@ -11,13 +11,10 @@ const InvoiceController = {
             res.status(404).send('Customer not found')
         }
 
+        data.customer = customer
         const invoice = new Invoice(data)
-        invoice.customer = customer
         
         const newInvoice = await invoice.save()
-        customer.invoices.push(newInvoice)
-
-        await customer.save()
 
         res.send(newInvoice)
     },
