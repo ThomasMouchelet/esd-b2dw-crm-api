@@ -35,7 +35,15 @@ const CustomerController = {
         res.send(customer)
     },
     getAllByUser(req, res) {
-        
+        const { id } = req.params
+
+        const user = User.findById(id).populate('customers')
+
+        if(!user) {
+            res.status(404).send('User not found')
+        }
+
+        res.send(user.customers)
     }
 }
 

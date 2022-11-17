@@ -22,7 +22,7 @@ npm run start:dev
 # going into container mongo
 docker exec -ti mongo bash
 # connect to db mongo
-mongosh
+mongosh -u root -p root
 ```
 
 # TODO

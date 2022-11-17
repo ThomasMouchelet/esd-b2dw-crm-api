@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
+const Customer = require('../models/Customer');
 
 const UserController = {
     async create(req, res) {
@@ -49,6 +50,16 @@ const UserController = {
         }
 
         res.send(user);
+    },
+    getAllCustomers: async (req, res) => {
+        // const user = await User.findById(id).populate('customers')
+
+        // if(!user) {
+        //     res.status(404).send('User not found')
+        // }
+
+        // res.send(user.customers)
+        res.send('Get all customers')
     }
 }
 

@@ -37,8 +37,17 @@ const InvoiceController = {
         const invoice = await Invoice.findById(req.params.id)
         res.send(invoice)
     },
-    getAllByCustomer(req, res) {
-        res.send('getAllByCustomer')
+    getAllByCustomer: async (req, res) => {
+        const id = req.params.id
+        
+        const customer = await Customer.findById(id)
+
+        if(!customer) {
+            res.status(404).send('Customer not found')
+        }
+
+        const invoices = await Invoice.find({customer: id})
+        res.send(invoices)
     }
 }
 

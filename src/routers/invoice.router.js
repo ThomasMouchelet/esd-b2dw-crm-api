@@ -9,5 +9,6 @@ router.get(`${endPoint}/:id`, InvoiceController.getOne)
 router.post(`${endPoint}`, InvoiceController.create)
 router.put(`${endPoint}/:id`, InvoiceController.update)
 router.delete(`${endPoint}/:id`, InvoiceController.delete)
+router.get(`${endPoint}/customers/:id`, InvoiceController.getAllByCustomer)
 
 module.exports = router
