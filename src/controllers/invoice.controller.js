@@ -36,6 +36,9 @@ const InvoiceController = {
     getOne: async (req, res) => {
         const invoice = await Invoice.findById(req.params.id)
         res.send(invoice)
+    },
+    getAllByCustomer(req, res) {
+        res.send('getAllByCustomer')
     }
 }
 

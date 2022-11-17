@@ -9,7 +9,11 @@ const customerSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: 'Invoice'
         }
-    ]
+    ],
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 })
 
 module.exports = mongoose.model('Customer', customerSchema);
