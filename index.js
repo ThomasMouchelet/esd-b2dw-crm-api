@@ -4,6 +4,7 @@ const app = express()
 const port = process.env.PORT || 8000
 const customerRouter = require('./src/routers/customer.router')
 const invoiceRouter = require('./src/routers/invoice.router')
+const userRouter = require('./src/routers/user.router')
 const connect = require('./config/mongoose.config')
 
 connect()
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
 
 app.use("/api", customerRouter)
 app.use("/api", invoiceRouter)
+app.use("/api", userRouter)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -9,6 +9,7 @@ const invoiceSchema = new Schema({
     },
     status: {
         type: String,
+        enum: ['send', 'cancel', 'paid'],
     },
     customer: {
         type: Schema.Types.ObjectId,
